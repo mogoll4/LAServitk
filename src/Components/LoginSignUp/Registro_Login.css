@@ -1,0 +1,189 @@
+/* src/Components/LoginSignUp/LoginSignUp.css */
+body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  /* Contenedor principal */
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 5%; /* Mejor centrado en pantallas grandes y pequeñas */
+    width: 90%; /* Ancho flexible para pantallas pequeñas */
+    max-width: 600px; /* Ancho máximo en pantallas grandes */
+    background: #FFFFFF; /* Blanco */
+    padding: 20px; /* Ajustado para mayor espacio en pantallas pequeñas */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho */
+  }
+  
+  /* Cabecera */
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Espaciado mayor para visibilidad */
+    width: 100%;
+    margin-top: 20px; /* Ajustado para mayor margen superior */
+  }
+  
+  /* Texto principal */
+  .text {
+    color: #000000; /* Gris claro */
+    font-size: 2rem; /* Tamaño de fuente adaptable */
+    font-weight: 700;
+    text-align: center; /* Centrado del texto */
+    margin: 0; /* Elimina margen innecesario */
+  }
+  
+  /* Subrayado del texto */
+  .underline {
+    width: 61px;
+    height: 6px;
+    background: #FF0000; /* Rojo */
+    border-radius: 9px;
+  }
+  
+  /* Contenedor de inputs */
+  .inputs {
+    margin-top: 30px; /* Ajustado para reducir espacio superior */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaciado mayor entre inputs */
+  }
+  
+  /* Estilo de input */
+  .input {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 100%; /* Ajuste al 100% del contenedor */
+    max-width: 480px; /* Máximo ancho */
+    height: 60px; /* Ajustado para pantallas pequeñas */
+    background: #F0F0F0; /* Gris claro */
+    border-radius: 6px;
+    border: 1px solid #B0BEC5; /* Gris oscuro para el borde */
+    box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho */
+  }
+  
+  /* Imagen dentro del input */
+  .input img {
+    margin: 0 15px; /* Ajuste en el margen */
+    width: 24px; /* Tamaño de imagen adecuado */
+  }
+  
+  /* Estilo del texto en el input */
+  .input input {
+    height: 100%;
+    width: calc(100% - 50px); /* Ajustado para dejar espacio para la imagen */
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #676767; /* Gris oscuro */
+    font-size: 16px; /* Ajuste en tamaño de fuente */
+    padding: 0 10px; /* Espaciado interno */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el ancho */
+  }
+  
+  /* Texto de "Olvidé mi contraseña" */
+  .forgot-password {
+    padding-left: 0; /* Sin padding izquierdo en pantallas pequeñas */
+    margin-top: 20px; /* Ajustado para mayor margen superior */
+    color: #676767; /* Gris oscuro */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+    text-align: center; /* Centrado del texto */
+  }
+  
+  /* Estilo del enlace dentro de "Olvidé mi contraseña" */
+  .forgot-password span {
+    color: #FF0000; /* Rojo */
+    cursor: pointer;
+  }
+  
+  /* Contenedor de botones */
+  .submit-container {
+    display: flex;
+    flex-direction: column; /* Stack verticalmente */
+    align-items: center; /* Centra el contenido horizontalmente */
+    gap: 20px; /* Espaciado entre elementos */
+    margin: 40px auto; /* Ajuste en el margen */
+  }
+  
+  /* Estilo del botón de enviar */
+  .submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ajuste al 100% del contenedor */
+    max-width: 220px; /* Máximo ancho */
+    height: 50px; /* Ajuste en altura */
+    color: #FFFFFF; /* Blanco */
+    background: #0c88ad; /* Color azul suave */
+    border-radius: 50px;
+    font-size: 16px; /* Tamaño de fuente más pequeño */
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid #066ba5; /* Borde del mismo color */
+    box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho */
+  }
+  
+  /* Estilo para elementos con clase "gray" */
+  .gray {
+    background: #F0F0F0; /* Gris claro */
+    color: #676767; /* Gris oscuro */
+  }
+  
+  /* Nuevo contenedor para los términos y condiciones */
+  .terms-container {
+    margin-top: 20px; /* Ajuste el margen superior */
+    font-size: 14px; /* Tamaño de fuente pequeño */
+    color: #676767; /* Color gris oscuro */
+  }
+  
+  .terms-container label {
+    display: flex;
+    align-items: center; /* Alinea checkbox y texto */
+    gap: 10px; /* Espacio entre checkbox y texto */
+  }
+  
+  .terms-container input[type="checkbox"] {
+    accent-color: #FF0000; /* Color del checkbox */
+  }
+  
+  .terms-container a {
+    color: #FF0000; /* Rojo */
+    text-decoration: none; /* Sin subrayado */
+    font-weight: 700; /* Negrita */
+  }
+  
+  .terms-container a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+  }
+  
+  /* Media Queries para pantallas más pequeñas */
+  @media (max-width: 600px) {
+    .container {
+      padding: 15px; /* Reducción del padding en pantallas pequeñas */
+      margin-top: 5%; /* Mejora en el centrado */
+    }
+  
+    .text {
+      font-size: 1.5rem; /* Tamaño de fuente más pequeño */
+    }
+  
+    .input {
+      max-width: 100%; /* Asegura que el input ocupe el ancho completo */
+    }
+  
+    .submit {
+      font-size: 14px; /* Tamaño de fuente más pequeño para el botón */
+      height: 45px; /* Ajuste en altura */
+      max-width: 100%; /* Botón ocupa el ancho completo */
+    }
+  
+    .submit-container {
+      gap: 10px; /* Espaciado reducido */
+    }
+  }
+  
