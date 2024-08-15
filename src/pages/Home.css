@@ -1,87 +1,217 @@
-/* src/pages/Home.css */
+/* Estilos generales para el body y el fondo */
 body {
-    font-family: 'Inter', sans-serif;
-  }
-  
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100vh;
+    background: 
+    linear-gradient(to bottom, rgba(176, 190, 197, 0.9), rgba(255, 0, 0, 0.6), rgba(0, 191, 255, 0.4), rgba(255, 255, 255, 0.6)),
+      url('../Components/Assets/logosvtk.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
 .home-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: auto;
-    margin-top: 100px; /* Ajusta según necesites */
-    width: 80%;
-    max-width: 800px;
-    background: #FFFFFF;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega una sombra sutil */
+    width: 100%;
+    background: transparent; /* El contenedor no debe cubrir el fondo */
+    padding: 0 20px; /* Relleno horizontal para el contenedor */
+    box-sizing: border-box;
 }
 
 .home-header {
-    text-align: center;
-    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribuye el espacio entre el texto y los botones */
+    width: 100%;
+    background: rgba(245, 245, 245, 0.9); /* Fondo gris claro con transparencia */
+    padding: 10px 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombras para un efecto moderno */
+    position: fixed; /* Fija la barra en la parte superior */
+    top: 0; /* Alinea la barra en la parte superior */
+    left: 0; /* Alinea la barra con el borde izquierdo */
+    z-index: 1000; /* Asegura que la barra esté sobre otros contenidos */
 }
 
 .home-text {
     color: #D32F2F; /* Rojo primario */
-    font-size: 36px; /* Tamaño reducido para un menú principal */
+    font-size: 36px;
     font-weight: 700;
-}
-
-.home-underline {
-    width: 80px;
-    height: 6px;
-    background: #D32F2F; /* Rojo primario */
-    border-radius: 9px;
-    margin: 10px auto;
+    text-align: center; /* Centra el texto horizontalmente */
+    margin: 0;
+    position: relative; /* Quita el posicionamiento absoluto para centrar el texto */
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Ajusta la alineación horizontal */
 }
 
 .home-nav {
-    width: 100%;
+    display: flex;
+    gap: 20px; /* Espacio entre los botones */
+    position: absolute;
+    right: 40px; /* Ajusta la posición de los botones */
+    top: 50%; /* Alinea verticalmente con el texto */
+    transform: translateY(-50%); /* Ajusta la alineación vertical */
 }
 
 .home-nav ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    gap: 20px; /* Espacio entre los botones */
 }
 
 .home-nav li {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
+    display: inline;
 }
 
 .home-nav a {
-    display: block;
-    padding: 15px;
-    background: #F5F5F5; /* Gris claro */
-    color: #D32F2F; /* Rojo primario */
-    font-size: 20px;
+    padding: 10px 20px;
+    color: #FFFFFF; /* Blanco */
+    font-size: 18px;
     font-weight: 500;
     text-decoration: none;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: #D32F2F; /* Rojo primario */
+    border-radius: 20px; /* Bordes redondeados para un estilo moderno */
     transition: background 0.3s, color 0.3s;
+    display: inline-block; /* Asegura que el enlace se comporte como un bloque en línea */
+    min-width: 120px; /* Asegura un ancho mínimo para el botón */
+    text-align: center; /* Centra el texto dentro del botón */
+    box-sizing: border-box; /* Incluye el relleno y borde en el ancho total */
 }
 
 .home-nav a:hover {
-    background: #D32F2F; /* Rojo primario */
+    background: #B71C1C; /* Rojo más oscuro para el hover */
     color: #FFFFFF; /* Blanco */
 }
 
-.home-footer {
-    margin-top: 30px;
-    text-align: center;
-    color: #B0BEC5; /* Gris oscuro */
-    font-size: 16px;
+.home-content {
+    margin-top: 80px; /* Añade margen superior para separar del encabezado */
+    width: 100%;
+    max-width: 800px;
+    text-align: left; /* Alinea el texto a la izquierda */
+    padding: 0 20px; /* Añade padding horizontal */
+    box-sizing: border-box;
 }
 
-.home-footer a {
+.image-space {
+    width: 100%;
+    height: 300px; /* Ajusta la altura según tus necesidades */
+    background-color: #F0F0F0; /* Fondo gris claro para simular un espacio de imagen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    overflow: hidden; /* Asegura que cualquier parte de la imagen que sobresalga esté oculta */
+}
+
+.image-space img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para que cubra el contenedor */
+}
+
+.text-space {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto; /* Centra el texto dentro del contenedor */
+    padding: 20px;
+    background-color: #FAFAFA; /* Fondo gris claro para el área de texto */
+    border-radius: 8px; /* Bordes redondeados para un estilo más suave */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras para un efecto más moderno */
+}
+
+.text-content {
+    margin-top: 20px;
+}
+
+.text-content h2 {
     color: #D32F2F; /* Rojo primario */
-    text-decoration: none;
+    font-size: 28px;
+    margin-bottom: 10px;
 }
 
-.home-footer a:hover {
-    text-decoration: underline;
+.text-content p {
+    color: #333; /* Gris oscuro */
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.home-footer {
+    background-color: #F5F5F5; /* Fondo gris claro para el footer */
+    color: #333; /* Color de texto gris oscuro */
+    font-size: 16px;
+    padding: 20px; /* Añade relleno para mejorar la apariencia */
+    width: 100%; /* Asegura que el footer abarque todo el ancho de la página */
+    box-sizing: border-box; /* Incluye el relleno y borde en el ancho total */
+    position: relative; /* Asegura que el footer esté posicionado correctamente */
+    margin-top: 20px; /* Añade margen superior para separarlo del contenido */
+    min-height: 100px; /* Asegura una altura mínima para el footer */
+    text-align: center; /* Centra el texto */
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .home-header {
+        flex-direction: column; /* Cambia la dirección de los elementos en pantallas más pequeñas */
+        align-items: center; /* Centra los elementos horizontalmente */
+        padding: 10px; /* Reduce el padding */
+    }
+
+    .home-nav {
+        position: static; /* Elimina la posición absoluta */
+        margin-top: 10px; /* Añade margen superior para separarlo del texto */
+        justify-content: center; /* Centra los botones de navegación */
+        right: auto; /* Restablece la alineación a la derecha */
+        top: auto; /* Restablece la alineación vertical */
+        transform: none; /* Elimina la transformación vertical */
+    }
+
+    .home-nav a {
+        font-size: 16px; /* Reduce el tamaño de la fuente en pantallas pequeñas */
+        min-width: auto; /* Elimina el ancho mínimo */
+        padding: 8px 16px; /* Ajusta el padding */
+    }
+
+    .home-text {
+        font-size: 28px; /* Reduce el tamaño de la fuente del texto en pantallas pequeñas */
+        position: static; /* Cambia a posición estática para centrado normal */
+        transform: none; /* Elimina la transformación */
+        width: 100%; /* Asegura que el texto ocupe el ancho completo */
+    }
+
+    .home-content {
+        margin-top: 60px; /* Ajusta el margen superior */
+        padding: 0 10px; /* Añade padding horizontal para el contenido */
+    }
+
+    .image-space {
+        height: 200px; /* Reduce la altura en pantallas pequeñas */
+    }
+
+    .text-space {
+        padding: 10px; /* Reduce el padding en pantallas pequeñas */
+    }
+}
+
+/* Media Queries para dispositivos móviles muy pequeños */
+@media (max-width: 480px) {
+    .home-text {
+        font-size: 24px; /* Reduce aún más el tamaño del texto */
+    }
+
+    .home-nav a {
+        font-size: 14px; /* Reduce el tamaño de la fuente aún más */
+        padding: 6px 12px; /* Ajusta el padding */
+    }
+
+    .home-footer {
+        font-size: 14px; /* Ajusta el tamaño de la fuente del footer */
+        padding: 10px; /* Ajusta el padding */
+    }
 }

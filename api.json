@@ -1,0 +1,118 @@
+{
+  "empleados": [
+    {
+      "id": "1",
+      "puesto": "Administrador",
+      "nombre": "Carlos Castañeda  ",
+      "correo": "carloscastañeda@gmail.com",
+      "contraseña": "123.admin"
+    },
+    {
+      "id": "2",
+      "puesto": "Mecánico",
+      "nombre": "Juan David Gómez Fernández",
+      "correo": "juandavid@taller.com",
+      "contraseña": "123.emp1"
+    },
+    {
+      "id": "3",
+      "puesto": "Mecánico",
+      "nombre": "Ana María López Rojas",
+      "correo": "anamaria@taller.com",
+      "contraseña": "123.emp3"
+    },
+    {
+      "id": "4",
+      "puesto": "Mecánico",
+      "nombre": "Luis Fernando Hernández Soto",
+      "correo": "luisfernando@taller.com",
+      "contraseña": "123.emp4"
+    },
+    {
+      "id": "5",
+      "puesto": "Recepcionista",
+      "nombre": "María José Martínez Rodríguez",
+      "correo": "mariajose@taller.com",
+      "contraseña": "123.emp5"
+    },
+    {
+      "id": "6",
+      "puesto": "Asistente",
+      "nombre": "Diego Alejandro Ramírez Castillo",
+      "correo": "diegoalejandro@taller.com",
+      "contraseña": "123.emp6"
+    }
+  ],
+  "clientes": [
+    {
+      "nombre": "Fernando García",
+      "correo": "fernando@gmail.com",
+      "contraseña": "cliente1",
+      "telefono": "3001234567",
+      "direccion": "Calle 1 #2-3"
+    },
+    {
+      "nombre": "Andrea Pérez",
+      "correo": "andrea@gmail.com",
+      "contraseña": "cliente2",
+      "telefono": "3001234568",
+      "direccion": "Calle 4 #5-6"
+    },
+    {
+      "nombre": "Javier Morales",
+      "correo": "javier@gmail.com",
+      "contraseña": "cliente3",
+      "telefono": "3001234569",
+      "direccion": "Calle 7 #8-9"
+    },
+    {
+      "nombre": "Diana Castillo",
+      "correo": "diana@gmail.com",
+      "contraseña": "cliente4",
+      "telefono": "3001234570",
+      "direccion": "Calle 10 #11-12"
+    },
+    {
+      "nombre": "Carlos Sánchez",
+      "correo": "carlos@gmail.com",
+      "contraseña": "cliente5",
+      "telefono": "3001234571",
+      "direccion": "Calle 13 #14-15"
+    },
+    {
+      "nombre": "Luisa Ramírez",
+      "correo": "luisa@gmail.com",
+      "contraseña": "cliente6",
+      "telefono": "3001234572",
+      "direccion": "Calle 16 #17-18"
+    },
+    {
+      "nombre": "Andrés Gómez",
+      "correo": "andres@gmail.com",
+      "contraseña": "cliente7",
+      "telefono": "3001234573",
+      "direccion": "Calle 19 #20-21"
+    },
+    {
+      "nombre": "Paula Ríos",
+      "correo": "paula@gmail.com",
+      "contraseña": "cliente8",
+      "telefono": "3001234574",
+      "direccion": "Calle 22 #23-24"
+    },
+    {
+      "nombre": "Miguel Fernández",
+      "correo": "miguel@gmail.com",
+      "contraseña": "cliente9",
+      "telefono": "3001234575",
+      "direccion": "Calle 25 #26-27"
+    },
+    {
+      "nombre": "Verónica Sánchez",
+      "correo": "veronica@gmail.com",
+      "contraseña": "cliente10",
+      "telefono": "3001234576",
+      "direccion": "Calle 28 #29-30"
+    }
+  ]
+}
