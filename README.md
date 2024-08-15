@@ -23,7 +23,7 @@
 2. Navega al directorio del proyecto:
 
     ```bash
-    cd LA-Servitk
+    cd LAServitk
     ```
 
 3. Instala las dependencias:
