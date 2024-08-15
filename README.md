@@ -1,69 +1,73 @@
 LA Servitk
 
-LA Servitk es una página web de mecánica rápida diseñada para facilitar la gestión y el servicio de vehículos. Este proyecto está en desarrollo y actualmente cuenta con funcionalidades básicas de login, registro y un menú principal.
+LA Servitk es una página web de mecánica rápida diseñada para facilitar la gestión y el servicio de vehículos. Este proyecto está en desarrollo y actualmente cuenta con funcionalidades básicas de login, registro y un menú principal. Además, ahora integra un servidor local para gestionar datos a través de una API.
 
 Tabla de Contenidos
+
 Descripción
+
 Instalación
+
 Uso
-Estructura del Proyecto
+
+Ejecutar la API Local
+
+Integración con React
 
 
-LA Servitk es una aplicación web destinada a talleres de mecánica rápida. Permite a los usuarios registrarse, iniciar sesión y navegar por un menú principal que dará acceso a diferentes servicios y funciones relacionados con la mecánica rápida.
+Descripción
+
+
+LA Servitk es una aplicación web destinada a talleres de mecánica rápida. Permite a los usuarios registrarse, iniciar sesión y navegar por un menú principal que da acceso a diferentes servicios y funciones relacionados con la mecánica rápida. Además, cuenta con una API local para gestionar los datos de la aplicación.
 
 Instalación
-Sigue estos pasos para instalar y configurar el proyecto localmente.
+
+Clona el repositorio
 
 
-# Clona el repositorio
 git clone https://github.com/tuusuario/la-servitk.git
 
-# Navega al directorio del proyecto
-cd la-servitk
 
-# Instala las dependencias
+Navega al directorio del proyecto
+
+cd LAServitk
+
+
+Instala las dependencias
+
+
 npm install
 
+Instala json-server para la API local
+
+npm install json-server --save-dev
 
 Uso
-Para iniciar la aplicación en modo desarrollo, utiliza el siguiente comando:
 
+Para iniciar la aplicación en modo desarrollo y ejecutar la API local, utiliza el siguiente comando:
 
-# Para iniciar la aplicación en modo desarrollo
-npm start
-Abre http://localhost:3000 para ver la aplicación en tu navegador.
+npm run dev
 
-Estructura del Proyecto
+Esto ejecutará tanto la aplicación React como el servidor json-server.
 
-La estructura del proyecto es la siguiente:
+Abre http://localhost:3000 para ver la aplicación en tu navegador y http://localhost:5000 para acceder a la API local.
 
-.
-├── public
-│   ├── favicon.ico
-│   ├── index.html
-│   └── manifest.json
-├── src
-│   ├── Components
-│   │   ├── Assets
-│   │   │   ├── email.png
-│   │   │   ├── logovtk.png
-│   │   │   ├── password.png
-│   │   │   └── person.png
-│   │   ├── LoginSignUp
-│   │   │   ├── Ingreso.jsx
-│   │   │   ├── Registrarse.jsx
-│   │   │   └── Registro_Login.css
-│   │   └── pages
-│   │       ├── Home.css
-│   │       ├── Home.js
-│   │       ├── Terminos.js
-│   │       └── TerminosCondiciones.css
-│   ├── App.css
-│   ├── App.js
-│   ├── App.test.js
-│   ├── index.css
-│   └── index.js
-├── .gitignore
-├── package-lock.json
-├── package.json
-└── README.md
+Ejecutar la API Local
+
+Para iniciar el servidor json-server que proporciona la API local, se ha configurado el script start-api en el archivo package.json. Asegúrate de tener json-server instalado y luego usa el siguiente comando:
+
+npm run start-api
+Esto iniciará el servidor API en http://localhost:5000.
+
+Integración con React
+El script dev utiliza concurrently para ejecutar tanto la aplicación React como el servidor json-server. Aquí está cómo está configurado en el package.json:
+
+{
+  "scripts": {
+    "start": "react-scripts start",
+    "start-api": "json-server --watch db.json --port 5000",
+    "dev": "concurrently \"npm run start\" \"npm run start-api\""
+  }
+}
+
+Con esto, puedes correr ambos procesos simultáneamente y tener tu aplicación y API funcionando al mismo tiempo.
