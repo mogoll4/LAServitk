@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import './Registro_Login.css'; // Asegúrate de actualizar el nombre del archivo CSS si es necesario
+import { Link } from 'react-router-dom';
+
+import './Registro_Login.css'; // Asegúrate de que este CSS esté correctamente enlazado
 
 import email_icon from '../Assets/email.png';
 import password_icon from '../Assets/password.png';
@@ -57,50 +59,56 @@ export const Registrarse = () => {
   };
 
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit}>
-        <div className="header">
-          <div className="text">
-            Ingreso
+    <div>
+      <header className="custom-header">
+        <h1>La Servitk</h1>
+      </header>
+      <div className="container">
+        <form onSubmit={handleSubmit}>
+          <div className="header">
+            <div className="text">
+              Ingreso
+            </div>
+            <div className="underline"></div>
           </div>
-          <div className="underline"></div>
-        </div>
-        <div className="inputs">
-          <div className="input">
-            <img src={email_icon} alt="Email icon" />
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder='Email'
-            />
-            {errors.email && <p className="error-message">{errors.email}</p>}
+          <div className="inputs">
+            <div className="input">
+              <img src={email_icon} alt="Email icon" />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email"
+              />
+              {errors.email && <p className="error-message">{errors.email}</p>}
+            </div>
+            <div className="input">
+              <img src={password_icon} alt="Password icon" />
+              <input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                placeholder="Contraseña"
+              />
+              {errors.password && <p className="error-message">{errors.password}</p>}
+            </div>
           </div>
-          <div className="input">
-            <img src={password_icon} alt="Password icon" />
-            <input
-              type="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              placeholder='Contraseña'
-            />
-            {errors.password && <p className="error-message">{errors.password}</p>}
+
+          <div className="submit-container">
+            <button type="submit" className="submit">
+              Ingresar
+            </button>
           </div>
-        </div>
-        <div className="forgot-password">
-          ¿Olvidaste tu contraseña?
-          <span>
-            Click aquí!
-          </span>
-        </div>
-        <div className="submit-container">
-          <button type="submit" className="submit">
-            Ingresar
-          </button>
-        </div>
-      </form>
+          <div className="forgot-password">
+            ¿No tienes una cuenta?
+            <span> <br></br>
+            <Link to="/registro">Click Aqui</Link>
+            </span>
+          </div>
+        </form>
+      </div>
     </div>
   );
 };
