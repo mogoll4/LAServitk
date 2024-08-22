@@ -1,7 +1,12 @@
 import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import './Home.css';
-import miImagen from '../Components/Assets/mecanico.jpg'; // Ajusta la ruta según la ubicación de tu imagen
+import miImagen1 from '../Components/Assets/mecanico.jpg'; // Imagen para el carousel
+import miImagen2 from '../Components/Assets/2.jpg'; // Imagen para el carousel
+import miImagen3 from '../Components/Assets/3.jpg'; // Imagen para el carousel
+import miImagen4 from '../Components/Assets/3.jpg'; // Imagen nueva
 
 function Home() {
   return (
@@ -21,33 +26,54 @@ function Home() {
       </header>
       <div className="home-content">
         <div className="image-space">
-          <img src={miImagen} alt="Descripción de la imagen" style={{ width: '100%', height: 'auto' }} />
+          <Carousel 
+            autoPlay 
+            infiniteLoop 
+            showThumbs={false} 
+            showStatus={false} 
+            showArrows={true}
+          >
+            <div>
+              <img src={miImagen1} alt="Descripción de la imagen 1" />
+              <p className="legend">Descripción de la imagen 1</p>
+            </div>
+            <div>
+              <img src={miImagen2} alt="Descripción de la imagen 2" />
+              <p className="legend">Descripción de la imagen 2</p>
+            </div>
+            <div>
+              <img src={miImagen3} alt="Descripción de la imagen 3" />
+              <p className="legend">Descripción de la imagen 3</p>
+            </div>
+          </Carousel>
         </div>
-        <div className="text-space">
-          <div className="text-content">
-            <h2>Servicio Rápido y Eficiente para Tu Auto</h2>
-            <p>
-              En La Servitk, nos especializamos en ofrecer un servicio integral para tu vehículo. 
-              Desde reparaciones rápidas hasta mantenimiento completo, nuestro equipo de expertos está 
-              listo para atender tus necesidades automotrices con la mayor eficiencia y profesionalismo.
-            </p>
-            <p>
-              Además, contamos con una amplia gama de repuestos de alta calidad para asegurar que tu auto 
-              funcione de la mejor manera. Ya sea que necesites un cambio de aceite, revisión de frenos, 
-              o repuestos específicos, en La Servitk tenemos lo que buscas.
-            </p>
-            <p>
-              No pierdas tiempo en largos períodos de espera en otros talleres. Con nosotros, puedes 
-              estar seguro de que recibirás un servicio rápido, confiable y a precios competitivos. 
-              Visítanos y comprueba la calidad de nuestro servicio por ti mismo.
-            </p>
+        <div className="text-image-container">
+          <div className="text-space">
+            <div className="text-content">
+              <h2>Servicio Rápido y Eficiente para Tu Auto</h2>
+              <p>
+                En La Servitk, nos especializamos en ofrecer un servicio integral para tu vehículo. 
+                Desde reparaciones rápidas hasta mantenimiento completo, nuestro equipo de expertos está 
+                listo para atender tus necesidades automotrices con la mayor eficiencia y profesionalismo.
+              </p>
+              <p>
+                Además, contamos con una amplia gama de repuestos de alta calidad para asegurar que tu auto 
+                funcione de la mejor manera. Ya sea que necesites un cambio de aceite, revisión de frenos, 
+                o repuestos específicos, en La Servitk tenemos lo que buscas.
+              </p>
+              <p>
+                No pierdas tiempo en largos períodos de espera en otros talleres. Con nosotros, puedes 
+                estar seguro de que recibirás un servicio rápido, confiable y a precios competitivos. 
+                Visítanos y comprueba la calidad de nuestro servicio por ti mismo.
+              </p>
+            </div>
+          </div>
+          <div className="additional-image">
+            <img src={miImagen4} alt="Descripción de la nueva imagen" />
           </div>
         </div>
         <Outlet /> {/* Aquí se renderizarán las rutas anidadas */}
       </div>
-      <footer className="home-footer">
-        <p>&copy; 2024 LA Servitk. Todos los derechos reservados.</p>
-      </footer>
     </div>
   );
 }
