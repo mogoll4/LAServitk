@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import './Registro_Login.css'; // Asegúrate de que este CSS esté correctamente enlazado
+import '../styles/Registro_Login.css'; // Asegúrate de que este CSS esté correctamente enlazado
 
-import email_icon from '../Assets/email.png';
-import password_icon from '../Assets/password.png';
+import email_icon from '../Components/Assets/email.png';
+import password_icon from '../Components/Assets/password.png';
 
 export const Registrarse = () => {
   // Estado para almacenar los valores del formulario

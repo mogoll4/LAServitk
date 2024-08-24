@@ -2,7 +2,7 @@ import React from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import './Home.css';
+import '../styles/Home.css';
 import miImagen1 from '../Components/Assets/mecanico.jpg'; // Imagen para el carousel
 import miImagen2 from '../Components/Assets/2.jpg'; // Imagen para el carousel
 import miImagen3 from '../Components/Assets/3.jpg'; // Imagen para el carousel

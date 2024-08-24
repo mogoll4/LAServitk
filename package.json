@@ -24,8 +24,6 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "start-api": "json-server --watch api.json --port 5000",
-    "dev": "concurrently \"npm run start\" \"npm run start-api\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

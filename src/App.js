@@ -1,9 +1,9 @@
 import './App.css';
-import LoginSignUp from './Components/LoginSignUp/Registrarse';
+import Registro from './pages/Registrarse';
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Terminos from './pages/Terminos';
-import Ingreso from './Components/LoginSignUp/Ingreso' ;
+import Ingreso from './pages/Ingreso' ;
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       </Route>
 
       {/* Ruta independiente */}
-      <Route path="/registro" element={<LoginSignUp />} />
+      <Route path="/registro" element={<Registro />} />
       <Route path="/ingreso" element={<Ingreso />} />
       <Route path="/terminos" element={<Terminos />} />
 

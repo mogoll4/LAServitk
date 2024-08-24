@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import './Registro_Login.css'; // Asegúrate de actualizar el nombre del archivo CSS si es necesario
+import '../styles/Registro_Login.css'
 
-import user_icon from '../Assets/person.png';
-import email_icon from '../Assets/email.png';
-import password_icon from '../Assets/password.png';
+import user_icon from '../Components/Assets/person.png';
+import email_icon from '../Components/Assets/email.png';
+import password_icon from '../Components/Assets/password.png';
 
 export const Registrarse = () => {
   const [formData, setFormData] = useState({
