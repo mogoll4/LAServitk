@@ -15,6 +15,9 @@ function Home() {
         <div className="home-text">La Servitk</div>
         <nav className="home-nav">
           <ul>
+          <li>
+              <Link to="/tienda">Tienda</Link>
+            </li>
             <li>
               <Link to="/registro">Registrarse</Link>
             </li>
@@ -74,8 +77,29 @@ function Home() {
         </div>
         <Outlet /> {/* Aquí se renderizarán las rutas anidadas */}
       </div>
+      <footer className="home-footer">
+        <div className="footer-content">
+          <div className="footer-section contact-info">
+            <h4>Contacto</h4>
+            <p>Dirección: Calle 17A # 102 - 56, Fontibon</p>
+            <p>Teléfono: 3203565617</p>
+            <p>Email: contacto@laservitk.com</p>
+          </div>
+          <div className="footer-section map">
+    <h3>Visítanos</h3>
+    <iframe
+        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCZYOFtmDTCHduH5bVOR97wwRhyGCbIPB8&q=La+servitk,+Bogotá"
+        allowFullScreen
+        loading="lazy"
+        title="Ubicación"
+    ></iframe>
+</div>
+
+        </div>
+      </footer>
     </div>
   );
 }
+
 
 export default Home;

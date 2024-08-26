@@ -42,7 +42,7 @@ body {
     font-size: 36px;
     font-weight: 700;
     text-align: center; /* Centra el texto horizontalmente */
-    margin: 0;
+    margin-left: -43%;
     position: relative; /* Quita el posicionamiento absoluto para centrar el texto */
     left: 50%; /* Centra horizontalmente */
     transform: translateX(-50%); /* Ajusta la alineación horizontal */
@@ -173,13 +173,87 @@ body {
     background-color: #F5F5F5; /* Fondo gris claro para el footer */
     color: #333; /* Color de texto gris oscuro */
     font-size: 16px;
-    padding: 20px; /* Añade relleno para mejorar la apariencia */
+    padding: 40px; /* Mayor relleno para mejorar la apariencia */
     width: 100%; /* Asegura que el footer abarque todo el ancho de la página */
     box-sizing: border-box; /* Incluye el relleno y borde en el ancho total */
     position: relative; /* Asegura que el footer esté posicionado correctamente */
-    margin-top: 20px; /* Añade margen superior para separarlo del contenido */
-    min-height: 100px; /* Asegura una altura mínima para el footer */
-    text-align: center; /* Centra el texto */
+    margin-top: 60px; /* Añade margen superior para separarlo del contenido */
+    border-top: 4px solid #D32F2F; /* Borde superior rojo primario */
+    border-radius: 12px; /* Bordes redondeados para el footer */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para un efecto moderno */
+    background: linear-gradient(to bottom, #FFFFFF, #F5F5F5); /* Gradiente de fondo para un efecto sutil */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Espacio entre secciones */
+}
+
+.footer-section {
+    text-align: center;
+    margin: 0 auto; /* Alinea el contenido al centro */
+    padding: 20px; /* Padding interno */
+    border-radius: 12px; /* Bordes redondeados */
+    background-color: #FFFFFF; /* Fondo blanco para el contenido del footer */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra sutil para un efecto moderno */
+    border: 1px solid #E0E0E0; /* Borde sutil alrededor de las secciones */
+}
+
+.map iframe {
+    border: 0;
+    border-radius: 12px; /* Bordes redondeados para el mapa */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el mapa */
+}
+
+.footer-section h3 {
+    color: #D32F2F; /* Rojo primario para los encabezados */
+    margin-bottom: 10px; /* Espacio inferior */
+}
+
+.footer-section p {
+    color: #333; /* Gris oscuro para el texto */
+    margin-bottom: 15px; /* Espacio inferior */
+    line-height: 1.6; /* Mejor altura de línea para legibilidad */
+}
+
+.footer-section a {
+    color: #D32F2F; /* Rojo primario para los enlaces */
+    text-decoration: none; /* Quita el subrayado */
+    font-weight: 500; /* Peso de fuente para los enlaces */
+}
+
+.footer-section a:hover {
+    text-decoration: underline; /* Subrayado en hover */
+}
+
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .footer-section {
+        text-align: left;
+        width: 30%; /* Ajusta el ancho de las secciones en pantallas grandes */
+    }
+
+    .map iframe {
+        height: 300px; /* Mayor altura para pantallas grandes */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        width: 100%; /* Ancho completo en pantallas pequeñas */
+    }
 }
 
 /* Media Queries para dispositivos móviles */
