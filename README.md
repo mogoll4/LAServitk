@@ -1,5 +1,8 @@
 # LA Servitk
 
+![Logo de LA Servitk](./src/Components/Assets/servilogo.jpg)
+
+
 **LA Servitk** es una página web de mecánica rápida diseñada para facilitar la gestión y el servicio de vehículos. Este proyecto está en desarrollo y actualmente cuenta con funcionalidades básicas de login, registro y un menú principal. Además, ahora integra un servidor local para gestionar datos a través de una API.
 
 ## Tabla de Contenidos
