@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/dashboard.css';
+import { Link } from 'react-router-dom';
 
 function Dashboard() {
     const [activeView, setActiveView] = useState('overview');
@@ -17,9 +18,6 @@ function Dashboard() {
             case 'gestion':
                 return <Gestion />;
             case 'register':
-                return <Register />;
-            case 'error':
-                return <Error />;
             default:
                 return (
                     <div className="dashboard-content">
@@ -74,8 +72,6 @@ function Sidebar({ setActiveView }) {
                     <li onClick={() => setActiveView('informacionClientes')}>Informacion Clientes</li>
                     <li onClick={() => setActiveView('inventario')}>Inventario</li>
                     <li onClick={() => setActiveView('gestion')}>Gestion</li>
-                    <li onClick={() => setActiveView('register')}>Register</li>
-                    <li onClick={() => setActiveView('error')}>Error</li>
                 </ul>
             )}
         </div>
@@ -155,16 +151,6 @@ function InformacionClientes() {
         // Agrega más clientes según sea necesario
     ];
 
-    const handleEdit = (id) => {
-        // Lógica para editar la información del cliente
-        console.log(`Editar cliente con ID: ${id}`);
-    };
-
-    const handleDelete = (id) => {
-        // Lógica para borrar el cliente
-        console.log(`Borrar cliente con ID: ${id}`);
-    };
-
     return (
         <div className="informacion-clientes-content">
             <h2 className="section-title">Información de Clientes</h2>
@@ -185,8 +171,10 @@ function InformacionClientes() {
                                 <td>{cliente.modeloVehiculo}</td>
                                 <td>{cliente.servicio}</td>
                                 <td>
-                                    <button className="edit-btn" onClick={() => handleEdit(cliente.id)}>Editar Información</button>
-                                    <button className="delete-btn" onClick={() => handleDelete(cliente.id)}>Borrar Cliente</button>
+                                <Link to={`/info-clientes/`}>
+                                    <button className="edit-btn">Mas Informacion</button>
+                                </Link>
+                                    <button className="delete-btn" onClick={() => (cliente.id)}>Borrar Cliente</button>
                                 </td>
                             </tr>
                         ))}
@@ -290,14 +278,6 @@ function Inventario() {
 
 function Gestion() {
     return <div className="gestion-content"><h2>Gestión</h2></div>;
-}
-
-function Register() {
-    return <div className="register-content"><h2>Register</h2></div>;
-}
-
-function Error() {
-    return <div className="error-content"><h2>Error</h2></div>;
 }
 
 export default Dashboard;

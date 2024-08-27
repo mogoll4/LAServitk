@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import '../styles/Registro_Login.css'
+import axios from 'axios'; // Importa axios
+import '../styles/Registro_Login.css';
 
 import user_icon from '../Components/Assets/person.png';
 import email_icon from '../Components/Assets/email.png';
@@ -22,17 +23,19 @@ export const Registrarse = () => {
     terms: '',
   });
 
+  const [successMessage, setSuccessMessage] = useState('');
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     let valid = true;
     let newErrors = { ...errors };
 
-    // Validación de campos
+    // Validación del formulario
     if (!formData.nombre) {
       newErrors.nombre = 'El nombre es obligatorio.';
       valid = false;
@@ -74,8 +77,13 @@ export const Registrarse = () => {
     setErrors(newErrors);
 
     if (valid) {
-      // Aquí puedes agregar el código para enviar el formulario
-      console.log('Formulario enviado');
+      try {
+        const response = await axios.post('http://localhost:3006/registro', formData);
+        console.log('Respuesta del servidor:', response.data);
+        setSuccessMessage(response.data.message);
+      } catch (error) {
+        console.error('Error al enviar el formulario:', error);
+      }
     }
   };
 
@@ -156,6 +164,7 @@ export const Registrarse = () => {
               Registrarse
             </button>
           </div>
+          {successMessage && <p className="success-message">{successMessage}</p>}
           <div className="forgot-password">
             ¿Ya tienes una cuenta?
             <span> <br></br>
